@@ -88,7 +88,7 @@ function add(si, hand, ran, rat, cnrat) {
   else if(rat >= 2300){
     col = "#e76f51";
   }
-  else if(rat >= 2200){
+  else if(rat >= 2100){
     col = "#c4501b";
   }
   else if(rat >= 1900){
