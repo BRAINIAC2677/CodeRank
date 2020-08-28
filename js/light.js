@@ -1,3 +1,4 @@
+
 var tab = document.querySelector("#tab1");
 
 
@@ -58,10 +59,15 @@ async function findHard() {
 
 
   var hard_prblm = [];
-  for(let i = 0;i < Math.min(want_no, inp.length); i++){
+  var prev_prblm = "messibarcacharbe";
+  for(let i = 0, j = 0;i < inp.length && j < want_no; i++){
     var prblm_name = user_subdata.result[inp[i][1]].problem.name;
     var prblm_ind = user_subdata.result[inp[i][1]].problem.index;
-    hard_prblm.push([prblm_name, prblm_ind, inp[i][0]]);
+    if(prblm_name != prev_prblm){
+      j++;
+      hard_prblm.push([prblm_name, prblm_ind, inp[i][0]]);
+    }
+    prev_prblm = prblm_name;
   }
 
   // forming the table to show
